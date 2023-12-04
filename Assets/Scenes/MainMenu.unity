@@ -281,14 +281,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136032399}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f975214f009ebe14f962614c5530f03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMixer: {fileID: 24100000, guid: dfd917740da1c064488cc83b18e83d0c, type: 2}
-  musicSlider: {fileID: 0}
-  SFXSlider: {fileID: 0}
+  myMixer: {fileID: 24100000, guid: 7128764a493423a4ca152e96710c6d91, type: 2}
+  musicSlider: {fileID: 1814106918}
+  SFXSlider: {fileID: 1452822964}
 --- !u!4 &136032401
 Transform:
   m_ObjectHideFlags: 0
