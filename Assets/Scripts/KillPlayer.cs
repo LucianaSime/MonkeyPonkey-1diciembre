@@ -24,7 +24,8 @@ public class KillPlayer : MonoBehaviour
             PlayerHealthController.instance.AnimMuerte();
             player.GetComponent<Movement>().Desactivate();
             Debug.Log("Te quito vida");
-        
+            AudioManager.instance.PlayDead();
+
 
         }
     }

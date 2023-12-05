@@ -13,19 +13,23 @@ public class Disparo : MonoBehaviour
     Rigidbody2D proyectil;
     public GameObject banana;
     public bool isActive = false;
-    public Movement movimiento;
+    public Movement movimiento, movementspeedplayer;
 
     // Start is called before the first frame update
     private void Start()
     {
         movimiento = GetComponent<Movement>();
+        movementspeedplayer = GetComponent<Movement>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
-        { 
+        {
+            //LO QUE QUIERO HACER ES QUE NO SE PUEDA CAMINAR EN MODO DISPARO, CREO QUE TODAVÍA SE PUEDE PORQUE TIENE SPEED
+            //movimiento.ModoTieso(true);
+            //movementspeedplayer = 0f;
             CambiarModo();
 
         }

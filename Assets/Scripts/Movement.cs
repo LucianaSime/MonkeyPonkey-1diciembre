@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
 
             if (puedeSaltar && Input.GetButtonDown("Jump"))
          {
-            escalo.DesactivarEscalix();
+            escalo.ActivarEscalix();
             theRb.velocity = new Vector2(theRb.velocity.x, jumpForce);
             puedeSaltar = !chequearSuelo;
             anim.SetTrigger("Jump");
