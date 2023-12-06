@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     public Animator anim;
     public CapsuleCollider2D capsulecolli;
     public float gravedadInicial;
+    private float hori=0f;
     private SpriteRenderer theSR;
 
     // Start is called before the first frame update
@@ -40,9 +41,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       hori = 0f;
         if (desactivarteclas == false)
-        { 
-        float hori = Input.GetAxis("Horizontal");
+
+        {
+        hori = Input.GetAxis("Horizontal");
+
+        }
+
 
         if (hori != 0f)
         {
@@ -53,11 +59,11 @@ public class Movement : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        theRb.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRb.velocity.y);
+        theRb.velocity = new Vector2(moveSpeed * hori, theRb.velocity.y);
 
 
-            if (puedeSaltar && Input.GetButtonDown("Jump"))
-         {
+        if (puedeSaltar && Input.GetButtonDown("Jump"))
+        {
             escalo.ActivarEscalix();
             theRb.velocity = new Vector2(theRb.velocity.x, jumpForce);
             puedeSaltar = !chequearSuelo;
@@ -66,14 +72,14 @@ public class Movement : MonoBehaviour
         }
 
         if (escalo.escalando)
-            {
-                AnimEscalar();
-            }
-            else
-            {
-                StopEscalar();
-            } 
-        
+        {
+            AnimEscalar();
+        }
+        else
+        {
+            StopEscalar();
+        }
+
 
         if (theRb.velocity.x < 0)
         {
@@ -84,7 +90,6 @@ public class Movement : MonoBehaviour
             theSR.flipX = false;
         }
     }
-}
 
     private void OnCollisionEnter2D(Collision2D collisionData)
     {

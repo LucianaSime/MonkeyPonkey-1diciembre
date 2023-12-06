@@ -56,24 +56,5 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
-    /* 
-     public void Anima()
-     {
-         if (currentHealth >= 10)
-         {
-             currentHealth = 10;
-             anim.SetTrigger("Dead");
-         }
-     }
-
-     public void DestroyMe()
-     {
-         if (currentHealth >= 10)
-         {
-             currentHealth = 10;
-             gameObject.SetActive(false);
-         }
-     }
-    */
 
 }
