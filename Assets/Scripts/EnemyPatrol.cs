@@ -37,26 +37,21 @@ public class EnemyPatrol : MonoBehaviour
             rb.velocity = new Vector2(-speed, 0);
         }
         
-        
-        //Debug.Log("Policia esta en "+ gameObject.transform.position.x + "Punto B esta en " + pointB.transform.position.x);
-        
 
         distancia = Vector2.Distance(transform.position, currentPoint.position);
-        //Debug.Log("La distancia es " + distancia);
+        
 
         if (distancia < 1f && currentPoint == pointB.transform)
         {
-            //Debug.Log("carlos ajjajajaj" + distancia);
+            
             flip();
 
             currentPoint = pointA.transform;
         }
         if (Vector2.Distance(transform.position, currentPoint.position) < 1f && currentPoint == pointA.transform)
         {
-            //Debug.Log("carlos ejjeejejejej" + distancia);
             flip();
             currentPoint = pointB.transform;
-            
         }
         }
 

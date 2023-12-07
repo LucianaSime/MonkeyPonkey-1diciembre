@@ -36,11 +36,12 @@ public class KillPlayer : MonoBehaviour
         if (cono != null)
         {
             cono.SetActive(false);
+        }
             if (isEngranajillo)
             {
                 gameManager.OnEngranajilloDestruidillo();
             }
-        }
+
         if (patrolcito != null)
         patrolcito.patrullando = false;
         animenemy.Play("GuardiaDead");

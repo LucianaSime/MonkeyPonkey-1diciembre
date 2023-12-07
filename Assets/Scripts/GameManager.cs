@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     public void OnEngranajilloDestruidillo()
     {
         engranajillosDestruidos++;
-        if (engranajillosDestruidos == 1)
+        if (engranajillosDestruidos >= 1)
         {
             jaulillaAnimax.SetBool("IsOpen", true);
         }
