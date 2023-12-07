@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public string tagSuelo = "Suelo";
     public bool chequearSuelo = true;
     private bool puedeSaltar = true;
+    public Disparo disparex;
 
     //Escalar
     public Escalar escalo;
@@ -57,6 +58,16 @@ public class Movement : MonoBehaviour
         else
         {
             anim.SetBool("isMoving", false);
+        }
+
+        if (theRb.velocity.y == 0)
+        {
+            disparex.CanShootdirigido = true;
+        }
+
+        else
+        {
+            disparex.CanShootdirigido = false;
         }
 
         theRb.velocity = new Vector2(moveSpeed * hori, theRb.velocity.y);
@@ -115,20 +126,21 @@ public class Movement : MonoBehaviour
     public void ModoTieso(bool value)
         {
             desactivarteclas = value;
+            puedeSaltar = false;
         }
 
 
         public void AnimEscalar ()
     {
         anim.SetBool("Escalando", true);
-        anim.SetBool("EscalandoIdle", escalo.verti == 0);
+        //anim.SetBool("EscalandoIdle", escalo.verti == 0);
         
     }
 
     public void StopEscalar ()
     {
         anim.SetBool("Escalando", false);
-        anim.SetBool("EscalandoIdle", false);
+        //anim.SetBool("EscalandoIdle", false);
     }    
 
 }

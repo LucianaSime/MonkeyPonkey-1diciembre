@@ -47,3 +47,6 @@ TagManager:
   - name: Soga
     uniqueID: 3036234987
     locked: 0
+  - name: Player
+    uniqueID: 1435580439
+    locked: 0

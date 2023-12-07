@@ -14,13 +14,15 @@ public class Disparo : MonoBehaviour
     public GameObject banana;
     public bool isActive = false;
     public Movement movimiento;
-    //public Escalar escalodis;
+    public bool CanShootdirigido;
+    public bool CanShootdirigido2;
 
     // Start is called before the first frame update
     private void Start()
     {
         movimiento = GetComponent<Movement>();
-        //escalodis = GetComponent<Escalar>();
+        CanShootdirigido = true;
+        CanShootdirigido2 = true;
     }
 
     // Update is called once per frame
@@ -28,8 +30,10 @@ public class Disparo : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            if (CanShootdirigido && CanShootdirigido2)
+            { 
             CambiarModo();
-
+            }
         }
         ActualizaAngulo();
     }
@@ -43,8 +47,6 @@ public class Disparo : MonoBehaviour
             fuerza = (Input.mousePosition - Camera.main.WorldToScreenPoint(disparo.position)).normalized *speedbanana;
             targetRotation = Input.mousePosition - Camera.main.WorldToScreenPoint(disparo.position);
             float angle = Mathf.Atan2(targetRotation.y, targetRotation.x) * Mathf.Rad2Deg;
-            //movimiento.puedesaltar(false);
-            //escalodis.DesactivarEscalix();
 
             if (angle > 180 || angle < 0)
             {

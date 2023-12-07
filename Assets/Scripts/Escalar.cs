@@ -11,7 +11,7 @@ public class Escalar : MonoBehaviour
     public bool puedoescalar;
     public Rigidbody2D theRb;
     public float verti;
-    //public vector2 input
+    public Disparo disparix;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class Escalar : MonoBehaviour
                 theRb.velocity = velocidadSubida;
                 theRb.gravityScale = 0;
                 escalando = true;
-
+                disparix.CanShootdirigido2 = false;
 
             }
 
@@ -50,7 +50,8 @@ public class Escalar : MonoBehaviour
                 if (PlayerHealthController.instance.isDead==false)
                 theRb.gravityScale = gravedadInicial;
                 escalando = false;
-        }
+                disparix.CanShootdirigido2 = true;
+            }
 
 
     }
