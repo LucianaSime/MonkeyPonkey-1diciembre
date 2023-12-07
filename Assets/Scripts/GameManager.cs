@@ -9,10 +9,23 @@ public class GameManager : MonoBehaviour
     public PlayerHealthController playerHealthController;
     public int engranajillosDestruidos = 0;
     public Animator jaulillaAnimax;
+    public GameObject pausitix;
+    public bool IsPause;
 
     private void Start()
     {
         AudioManager.instance.PlayMusic(1);
+        pausitix.SetActive(false);
+        IsPause = false;
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            IsPause = !IsPause;
+            pausitix.SetActive(IsPause);
+        }
     }
 
     public void OnEngranajilloDestruidillo()

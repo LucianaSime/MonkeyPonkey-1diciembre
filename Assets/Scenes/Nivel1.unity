@@ -630,6 +630,8 @@ MonoBehaviour:
   playerHealthController: {fileID: 0}
   engranajillosDestruidos: 0
   jaulillaAnimax: {fileID: 1141983130}
+  pausitix: {fileID: 889593314}
+  IsPause: 0
 --- !u!4 &162554042
 Transform:
   m_ObjectHideFlags: 0
@@ -13588,7 +13590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889593315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17808,7 +17810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000022888184, y: 123.5}
+  m_AnchoredPosition: {x: -0.000022888184, y: 90}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1541803580
@@ -18706,7 +18708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1684550597
 RectTransform:
   m_ObjectHideFlags: 0
