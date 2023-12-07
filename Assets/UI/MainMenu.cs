@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic(0);
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Nivel1");
@@ -15,4 +20,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Salir...");
         Application.Quit();
     }
+
+
 }

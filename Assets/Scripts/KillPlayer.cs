@@ -10,7 +10,8 @@ public class KillPlayer : MonoBehaviour
     public Collider2D capsulecolliderenemy;
     public GameObject cono;
     public EnemyPatrol patrolcito;
-
+    public bool isEngranajillo;
+    public GameManager gameManager;
     //public Animator animenemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,8 +26,6 @@ public class KillPlayer : MonoBehaviour
             player.GetComponent<Movement>().Desactivate();
             Debug.Log("Te quito vida");
             AudioManager.instance.PlayDead();
-
-
         }
     }
 
@@ -35,7 +34,13 @@ public class KillPlayer : MonoBehaviour
     {
         capsulecolliderenemy.isTrigger = true;
         if (cono != null)
-        cono.SetActive(false);
+        {
+            cono.SetActive(false);
+            if (isEngranajillo)
+            {
+                gameManager.OnEngranajilloDestruidillo();
+            }
+        }
         if (patrolcito != null)
         patrolcito.patrullando = false;
         // animenemy.SetTrigger("ANIMACION DE ENEMIGO");

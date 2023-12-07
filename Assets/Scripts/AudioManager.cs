@@ -8,9 +8,14 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioS, audioM;
     public AudioClip[] pistas_Sfx, pistas_Musica;
 
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else Destroy(gameObject);
     }
 
     public void PlaySound(int index, float delay = 0f)
@@ -49,6 +54,11 @@ public class AudioManager : MonoBehaviour
         PlaySound(4);
     }
 
+    public void PlayClick()
+    {
+        PlaySound(5);
+    }
+
     public void PlayMusic(int index)
     {
         audioM.clip = pistas_Musica[index];
@@ -56,8 +66,14 @@ public class AudioManager : MonoBehaviour
         audioM.Play();
     }
 
-    public void PlayRandomMusic()
+    public void OnMusicValueChange(float value)
     {
-        PlayMusic(Random.Range(0, pistas_Musica.Length));
+        audioM.volume = value;
+    }
+
+    public void OnSfxValueChange(float value)
+    {
+        audioS.volume = value;
+        PlaySound(6);
     }
 }

@@ -26,7 +26,7 @@ public class Disparo : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             CambiarModo();
 
