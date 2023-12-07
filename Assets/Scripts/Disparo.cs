@@ -14,11 +14,13 @@ public class Disparo : MonoBehaviour
     public GameObject banana;
     public bool isActive = false;
     public Movement movimiento;
+    //public Escalar escalodis;
 
     // Start is called before the first frame update
     private void Start()
     {
         movimiento = GetComponent<Movement>();
+        //escalodis = GetComponent<Escalar>();
     }
 
     // Update is called once per frame
@@ -41,14 +43,16 @@ public class Disparo : MonoBehaviour
             fuerza = (Input.mousePosition - Camera.main.WorldToScreenPoint(disparo.position)).normalized *speedbanana;
             targetRotation = Input.mousePosition - Camera.main.WorldToScreenPoint(disparo.position);
             float angle = Mathf.Atan2(targetRotation.y, targetRotation.x) * Mathf.Rad2Deg;
+            //movimiento.puedesaltar(false);
+            //escalodis.DesactivarEscalix();
 
-        if (angle > 180 || angle < 0)
+            if (angle > 180 || angle < 0)
             {
 
             }
             else
             {
-                    disparo.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            disparo.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
