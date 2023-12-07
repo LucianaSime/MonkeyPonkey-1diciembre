@@ -122,8 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagEnemigo: Enemigo
   capsulecolliderenemy: {fileID: 4189207488139841195}
-  cono: {fileID: 6496011980542948307}
+  cono: {fileID: 0}
   patrolcito: {fileID: 0}
+  isEngranajillo: 0
+  gameManager: {fileID: 0}
+  animenemy: {fileID: 3359595747252236195}
 --- !u!58 &4189207488139841195
 CircleCollider2D:
   m_ObjectHideFlags: 0

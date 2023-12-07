@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     public bool chequearSuelo = true;
     private bool puedeSaltar = true;
     public Disparo disparex;
+    public bool puedesaltar2;
 
     //Escalar
     public Escalar escalo;
@@ -34,7 +35,7 @@ public class Movement : MonoBehaviour
         theRb = GetComponent<Rigidbody2D>();
         gravedadInicial = theRb.gravityScale;
         escalo = GetComponent<Escalar>();
-
+        puedesaltar2 = true;
         //no agregado recién
         theSR = GetComponent<SpriteRenderer>();
     }
@@ -73,7 +74,7 @@ public class Movement : MonoBehaviour
         theRb.velocity = new Vector2(moveSpeed * hori, theRb.velocity.y);
 
 
-        if (puedeSaltar && Input.GetButtonDown("Jump"))
+        if (puedeSaltar && Input.GetButtonDown("Jump") && puedesaltar2)
         {
             escalo.ActivarEscalix();
             theRb.velocity = new Vector2(theRb.velocity.x, jumpForce);
@@ -126,7 +127,7 @@ public class Movement : MonoBehaviour
     public void ModoTieso(bool value)
         {
             desactivarteclas = value;
-            puedeSaltar = false;
+            puedesaltar2 = !value;
         }
 
 

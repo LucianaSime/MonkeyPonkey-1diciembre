@@ -7,7 +7,6 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
-    private Animator anim;
     private Transform currentPoint;
     public float speed;
     public float distancia;
@@ -17,7 +16,6 @@ public class EnemyPatrol : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         currentPoint = pointB.transform;
         
        // anim.SetBool("isRunning", true);

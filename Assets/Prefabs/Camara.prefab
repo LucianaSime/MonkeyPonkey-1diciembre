@@ -290,6 +290,9 @@ MonoBehaviour:
   capsulecolliderenemy: {fileID: 2750240306218425319}
   cono: {fileID: 480644771403745182}
   patrolcito: {fileID: 0}
+  isEngranajillo: 0
+  gameManager: {fileID: 0}
+  animenemy: {fileID: 930930940886904213}
 --- !u!70 &2750240306218425319
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

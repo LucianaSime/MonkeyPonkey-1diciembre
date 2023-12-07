@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Animator jaulillaAnimax;
     public GameObject pausitix;
     public bool IsPause;
+    public GameObject howtowinnii;
 
     private void Start()
     {
@@ -25,7 +26,27 @@ public class GameManager : MonoBehaviour
         {
             IsPause = !IsPause;
             pausitix.SetActive(IsPause);
+            DesactivateControllini();
         }
+    }
+
+    public void DesactivePause ()
+    {
+        IsPause = false;
+        pausitix.SetActive(false);
+        DesactivateControllini();
+    }
+
+    public void ActivateControllini()
+    {
+        howtowinnii.SetActive(true);
+
+    }
+
+    public void DesactivateControllini()
+    {
+        howtowinnii.SetActive(false);
+
     }
 
     public void OnEngranajilloDestruidillo()

@@ -12,7 +12,7 @@ public class KillPlayer : MonoBehaviour
     public EnemyPatrol patrolcito;
     public bool isEngranajillo;
     public GameManager gameManager;
-    //public Animator animenemy;
+    public Animator animenemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -43,7 +43,7 @@ public class KillPlayer : MonoBehaviour
         }
         if (patrolcito != null)
         patrolcito.patrullando = false;
-        // animenemy.SetTrigger("ANIMACION DE ENEMIGO");
+        animenemy.Play("GuardiaDead");
 
     }
 
